@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import axios from '../api/axiosInstance';
+import { Link } from "react-router-dom";
+import axios from "../api/axiosInstance";
 import AdminLogin from "./AdminLogin"; // adjust path if needed
 import {
   Form,
@@ -19,10 +20,7 @@ export default function LoginPage() {
 
   const handleStudentLogin = async () => {
     try {
-      const res = await axios.post(
-        "/api/student/login",
-        { phone, email },
-      );
+      const res = await axios.post("/api/student/login", { phone, email });
       navigate("/quiz", { state: { phone: phone } });
     } catch (err) {
       alert("Login failed: " + err.response?.data?.message || err.message);
@@ -92,7 +90,7 @@ export default function LoginPage() {
             </div>
 
             <p className="mt-3 text-center">
-              New Student? <a href="/register">Register here</a>
+              New Student? <Link to="/register">Register here</Link>
             </p>
           </Form>
         )}

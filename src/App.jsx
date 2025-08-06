@@ -1,7 +1,5 @@
-import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import StudentRegister from "./pages/StudentRegister";
-import AdminLogin from "./pages/AdminLogin";
 import AdminDashboard from "./pages/AdminDashboard";
 import QuizPage from "./pages/QuizPage";
 import ResultPage from "./pages/ResultPage";
@@ -33,6 +31,8 @@ function App() {
             </ProtectedRoute>
           }
         />
+        <Route path="*" element={<h1>Page Not Found</h1>} />
+
         {/* <Route path="/admin/dashboard" element={<AdminDashboard />} /> */}
       </Routes>
     </Router>
