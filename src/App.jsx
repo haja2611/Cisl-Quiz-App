@@ -10,7 +10,7 @@ import LoginPage from "./pages/LoginPage";
 
 function App() {
   return (
-    <Router>
+    <Router basename="/Cisl-Quiz-App">
       <Routes>
         <Route path="/" element={<LoginPage />} />
         <Route path="/register" element={<StudentRegister />} />

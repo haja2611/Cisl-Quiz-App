@@ -5,8 +5,11 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "serve": "vite preview"
+    "serve": "vite preview",
+   "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
+  "homepage": "https://haja2611.github.io/Cisl-Quiz-App",
   "dependencies": {
     "axios": "^1.11.0",
     "bootstrap": "^5.3.7",
@@ -22,6 +25,7 @@
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^3.0.0",
+    "gh-pages": "^6.3.0",
     "vite": "^4.0.0"
   }
 }
